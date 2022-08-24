@@ -65,7 +65,6 @@ def generate_report(result):
 def convert_to_x(row):
     r = []
     for index, value in row.items():
-        # print(x)
         if index not in left_cols:
             r.append("" if value is pd.NaT else "X")
         else:
@@ -90,3 +89,5 @@ report_all.to_excel(writer, sheet_name='All Date')
 
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
+
+report_require_X.to_html("report.html")
