@@ -5,6 +5,8 @@ Generate reports for your cloud skills boost class from the list of public profi
 Clone this repo to your local machine.
 Update Students.xlsx for student id and their public profile. 
 
+Open main.py and update the required_tasks list, since students profile may contain a lot of completion badges but it is unrelated to your course.
+
 ## For the first time, you have to create virtual environment
 ```
 python -m venv venv

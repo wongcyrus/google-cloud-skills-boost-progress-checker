@@ -3,6 +3,16 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
+
+required_tasks = ["Getting Started with Google Kubernetes Engine",
+                  "Google Cloud Fundamentals: Core Infrastructure",
+                  "Essential Google Cloud Infrastructure: Foundation",
+                  "Automating Infrastructure on Google Cloud with Terraform",
+                  "Essential Google Cloud Infrastructure: Core Services",
+                  "Optimize Costs for Google Kubernetes Engine",
+                  "Logging, Monitoring and Observability in Google Cloud",
+                  "Reliable Google Cloud Infrastructure: Design and Process"]
+
 df = pd.read_excel("Students.xlsx")
 
 
@@ -12,7 +22,7 @@ def get_task_name(div):
 
 def get_task_date(div):
     date_time_str = div.find(
-            "span", class_="ql-body-2 l-mbs").text.strip().replace("Earned ", "").replace(" EDT", "").replace(" EST", "")
+        "span", class_="ql-body-2 l-mbs").text.strip().replace("Earned ", "").replace(" EDT", "").replace(" EST", "")
     try:
         return datetime.strptime(date_time_str, '%b  %d, %Y')
     except Exception as ex:
@@ -48,14 +58,6 @@ left_cols = ['ID', 'Public Profile']
 def generate_report(result):
     result = result[left_cols +
                     [col for col in result.columns if col not in left_cols]]
-    required_tasks = ["Getting Started with Google Kubernetes Engine",
-                      "Google Cloud Fundamentals: Core Infrastructure",
-                      "Essential Google Cloud Infrastructure: Foundation",
-                      "Automating Infrastructure on Google Cloud with Terraform",
-                      "Essential Google Cloud Infrastructure: Core Services",
-                      "Optimize Costs for Google Kubernetes Engine",
-                      "Logging, Monitoring and Observability in Google Cloud",
-                      "Reliable Google Cloud Infrastructure: Design and Process"]
     required_column = left_cols + required_tasks
     return result, result[required_column]
 
