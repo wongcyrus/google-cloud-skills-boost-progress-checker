@@ -91,3 +91,4 @@ report_all.to_excel(writer, sheet_name='All Date')
 writer.save()
 
 report_require_X.to_html("report.html")
+report_require_X.to_csv("report.csv")
