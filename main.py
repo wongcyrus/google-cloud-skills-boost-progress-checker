@@ -73,6 +73,7 @@ def convert_to_x(row):
 
 
 result = df.apply(get_tasks, axis=1)
+result.sort_values(by=['ID'], inplace=True)
 report_all, report_required = generate_report(result)
 
 result = result.apply(convert_to_x, axis=1)
