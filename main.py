@@ -7,11 +7,9 @@ from datetime import datetime
 required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Google Cloud Fundamentals: Core Infrastructure",
                   "Essential Google Cloud Infrastructure: Foundation",
-                  "Automating Infrastructure on Google Cloud with Terraform",
-                  "Essential Google Cloud Infrastructure: Core Services",
-                  "Optimize Costs for Google Kubernetes Engine",
-                  "Logging, Monitoring and Observability in Google Cloud",
-                  "Reliable Google Cloud Infrastructure: Design and Process"]
+                  "Essential Google Cloud Infrastructure: Core Services",                                  
+                  "Optimize Costs for Google Kubernetes Engine",                
+                  "Automating Infrastructure on Google Cloud with Terraform",  ]
 
 df = pd.read_excel("Students.xlsx")
 
