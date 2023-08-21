@@ -2,7 +2,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-
+import pandas as pd
+import urllib.parse
+import os
 
 required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Google Cloud Fundamentals: Core Infrastructure",
@@ -11,7 +13,21 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Optimize Costs for Google Kubernetes Engine",                
                   "Automating Infrastructure on Google Cloud with Terraform",  ]
 
-df = pd.read_excel("Students.xlsx")
+sheet_id = os.environ.get("SHEET_ID")
+sheet_name = urllib.parse.quote("Form Responses 1")
+url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
+df = pd.read_csv(url)
+
+# rename columns Student ID to ID and Public Profile URL to Public Profile
+df.rename(columns={"Student ID": "ID", "Public Profile URL": "Public Profile"}, inplace=True)
+# remove other columns
+df = df[["ID", "Public Profile"]]
+
+# extract row with duplicate Public Profile
+duplicated_profile = df[df.duplicated(subset="Public Profile", keep=False)]
+
+# if there is duplicate ID, keep the last one
+df.drop_duplicates(subset="ID", keep="last", inplace=True)
 
 
 def get_task_name(div):

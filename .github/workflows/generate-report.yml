@@ -28,7 +28,8 @@ jobs:
         env: 
           EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}        
+          SHEET_ID: ${{ secrets.SHEET_ID }}
         run: python main.py
           
       - name: commit files
