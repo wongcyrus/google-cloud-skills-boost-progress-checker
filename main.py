@@ -104,6 +104,33 @@ report_all_X, report_require_X = generate_report(result)
 # Create a Pandas Excel writer using XlsxWriter as the engine.
 writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
 
+
+# in report_require_X dataframe, except ID and Public Profile, if all other columns are X, then mark to a new completed column
+def get_completed(row):
+    for index, value in row.items():
+        if index not in left_cols:
+            if value != "X":
+                return "No"
+    return "Yes"
+
+def count_X(row):
+    no_x = 0
+    for index, value in row.items():
+        if index not in left_cols:
+            if value == "X":
+                no_x += 1
+    return no_x   
+
+report_require_X.loc[:, 'Finished'] = report_require_X.apply(
+    count_X, axis=1)
+report_require_X.loc[:, 'Complete All'] = report_require_X.apply(
+    get_completed, axis=1)
+
+# Reorder 'Complete All' and 'Finished' columns to the second column
+cols = list(report_require_X.columns)
+cols = [cols[0]] + [cols[-1]] + [cols[-2]] + cols[1:-2]
+report_require_X = report_require_X[cols]
+
 # Write each dataframe to a different worksheet.
 report_require_X.to_excel(writer, sheet_name='Required X')
 report_all_X.to_excel(writer, sheet_name='All X')
