@@ -5,13 +5,20 @@ from datetime import datetime
 import pandas as pd
 import urllib.parse
 import os
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+import pytz
+
+env = Environment(
+    loader=FileSystemLoader("templates"),
+    autoescape=select_autoescape()
+)
 
 required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Google Cloud Fundamentals: Core Infrastructure",
                   "Essential Google Cloud Infrastructure: Foundation",
-                  "Essential Google Cloud Infrastructure: Core Services",                                  
-                  "Optimize Costs for Google Kubernetes Engine",                
-                  "Automating Infrastructure on Google Cloud with Terraform",  ]
+                  "Essential Google Cloud Infrastructure: Core Services",
+                  "Optimize Costs for Google Kubernetes Engine",
+                  "Automating Infrastructure on Google Cloud with Terraform",]
 
 sheet_id = os.environ.get("SHEET_ID")
 sheet_name = urllib.parse.quote("Form Responses 1")
@@ -19,7 +26,8 @@ url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sh
 df = pd.read_csv(url)
 
 # rename columns Student ID to ID and Public Profile URL to Public Profile
-df.rename(columns={"Student ID": "ID", "Public Profile URL": "Public Profile"}, inplace=True)
+df.rename(columns={"Student ID": "ID",
+          "Public Profile URL": "Public Profile"}, inplace=True)
 # remove other columns
 df = df[["ID", "Public Profile"]]
 
@@ -105,5 +113,21 @@ report_all.to_excel(writer, sheet_name='All Date')
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
 
-report_require_X.to_html("report.html")
+report_require_X.to_html("table.html")
+# Read report.html file and save to a variable
+table = open("table.html").read()
+template = env.get_template("report.html")
+
+# Get Hong kong time
+tz = pytz.timezone('Asia/Hong_Kong')
+datetime_HK = datetime.now(tz)
+# Render report.html with data
+report_html = template.render(
+    table=table, now=datetime_HK.strftime("%d/%m/%Y %H:%M:%S"), time_zone="Hong Kong")
+# save report.html
+with open("report.html", "w") as f:
+    f.write(report_html)
+# remove table.html
+os.remove("table.html")
+
 report_require_X.to_csv("report.csv")
