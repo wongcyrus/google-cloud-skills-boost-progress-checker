@@ -104,11 +104,12 @@ report_all_X, report_require_X = generate_report(result)
 # Create a Pandas Excel writer using XlsxWriter as the engine.
 writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
 
+non_mark_cols = ['ID', 'Public Profile', 'Finished', 'Complete All']
 
 # in report_require_X dataframe, except ID and Public Profile, if all other columns are X, then mark to a new completed column
 def get_completed(row):
     for index, value in row.items():
-        if index not in left_cols:
+        if index not in non_mark_cols:
             if value != "X":
                 return "No"
     return "Yes"
@@ -116,10 +117,11 @@ def get_completed(row):
 def count_X(row):
     no_x = 0
     for index, value in row.items():
-        if index not in left_cols:
+        if index not in non_mark_cols:
             if value == "X":
                 no_x += 1
-    return no_x   
+    return no_x
+
 
 report_require_X.loc[:, 'Finished'] = report_require_X.apply(
     count_X, axis=1)
