@@ -1,4 +1,5 @@
 ,ID,Complete All,Finished,Public Profile,Getting Started with Google Kubernetes Engine,Google Cloud Fundamentals: Core Infrastructure,Essential Google Cloud Infrastructure: Foundation,Essential Google Cloud Infrastructure: Core Services,Optimize Costs for Google Kubernetes Engine,Automating Infrastructure on Google Cloud with Terraform
+58,210084289,Yes,6,https://www.cloudskillsboost.google/public_profiles/cf28d143-807c-440a-92db-dd841fed3099,X,X,X,X,X,X
 46,210326399,No,1,https://www.cloudskillsboost.google/public_profiles/8424e649-74b8-421d-899e-66a0d4ccf308,X,,,,,
 21,210346221,No,0,https://www.cloudskillsboost.google/public_profiles/e04357b0-4ef9-40d2-8bfa-aba5db94a96c,,,,,,
 12,220001935,No,0,https://www.cloudskillsboost.google/public_profiles/24ee23f0-9a22-4f08-84f4-49f1dbcc8b0f,,,,,,
@@ -8,7 +9,7 @@
 19,220017970,Yes,6,https://www.cloudskillsboost.google/public_profiles/43b31d58-44d7-47ee-9213-dd72c218b37c,X,X,X,X,X,X
 16,220017994,Yes,6,https://www.cloudskillsboost.google/public_profiles/a98b610a-b81e-44c5-8625-3ff5e0cc3146,X,X,X,X,X,X
 40,220018014,Yes,6,https://www.cloudskillsboost.google/public_profiles/ff00dd6d-bcd5-4625-82dc-65bde721e703,X,X,X,X,X,X
-6,220019902,No,1,https://www.cloudskillsboost.google/public_profiles/706c9f48-d96c-40e0-bcaa-0df3f60305c9,X,,,,,
+6,220019902,No,2,https://www.cloudskillsboost.google/public_profiles/706c9f48-d96c-40e0-bcaa-0df3f60305c9,X,X,,,,
 47,220038399,Yes,6,https://www.cloudskillsboost.google/public_profiles/b55a0141-e49e-4512-ad31-8da814df3d64,X,X,X,X,X,X
 54,220041515,No,0,https://www.cloudskillsboost.google/public_profiles/bb098497-1919-433b-aea7-2d400412cf61,,,,,,
 0,220046953,Yes,6,https://www.cloudskillsboost.google/public_profiles/1ab53805-4630-4b28-a63b-bdbb6004e6be,X,X,X,X,X,X
@@ -34,14 +35,14 @@
 49,220183609,No,1,https://www.cloudskillsboost.google/public_profiles/25e47f66-2bc9-439d-ad5f-cf1d5c3df33f,X,,,,,
 44,220187749,Yes,6,https://www.cloudskillsboost.google/public_profiles/a25fa554-e06b-4e14-8fc0-c8d22db6c951,X,X,X,X,X,X
 42,220201994,No,1,https://www.cloudskillsboost.google/public_profiles/29820e01-ad7b-467c-92c3-aed368f912a4,,X,,,,
-28,220212622,No,2,https://www.cloudskillsboost.google/public_profiles/a0b9d6df-a1ab-4801-993e-d38000f9f3eb,,X,,X,,
+28,220212622,No,4,https://www.cloudskillsboost.google/public_profiles/a0b9d6df-a1ab-4801-993e-d38000f9f3eb,,X,X,X,,X
 29,220224633,No,1,https://www.cloudskillsboost.google/public_profiles/75009920-0e3c-465c-b9bb-f39ec96d32fa,,X,,,,
 48,220230707,No,2,https://www.cloudskillsboost.google/public_profiles/a8e6f5cc-1096-47cd-8460-5bd08d2248cd,X,X,,,,
 2,220237051,Yes,6,https://www.cloudskillsboost.google/public_profiles/118954f0-a2fc-4e3a-a0f4-c2ba9a9a3308,X,X,X,X,X,X
 31,220242638,Yes,6,https://www.cloudskillsboost.google/public_profiles/c934fa0b-37ce-4101-9689-b5f20b8bef75,X,X,X,X,X,X
 51,220253432,No,2,https://www.cloudskillsboost.google/public_profiles/371179bb-e5da-4f06-82a0-ab925cc52953,,X,X,,,
 24,220262361,No,0,https://www.cloudskillsboost.google/public_profiles/eb1a2853-9059-42be-8387-4b7a7022cc00,,,,,,
-35,220264723,No,2,https://www.cloudskillsboost.google/public_profiles/19ce0ed3-3274-4618-bbc2-d711cc627421,X,,X,,,
+35,220264723,No,3,https://www.cloudskillsboost.google/public_profiles/19ce0ed3-3274-4618-bbc2-d711cc627421,X,X,X,,,
 14,220267485,No,3,https://www.cloudskillsboost.google/public_profiles/c58a931f-70a8-4a33-9e95-e9c49a57cf36,X,X,X,,,
 25,220289508,No,0,https://www.cloudskillsboost.google/public_profiles/da35eae9-06e9-411e-a2a8-99663c8c5e93,,,,,,
 20,220289570,Yes,6,https://www.cloudskillsboost.google/public_profiles/7d9bd2b2-c97b-4aae-8d1d-06d081682eeb,X,X,X,X,X,X
