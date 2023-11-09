@@ -34,7 +34,7 @@ pip install requirements.txt
 ### Run the program
 For windows,
 ```
-python .\main.py
+SHEET_ID=xxxxxx python main.py
 ```
 
 You will get the report.xlsx.

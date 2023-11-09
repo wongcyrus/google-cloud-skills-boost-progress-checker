@@ -39,12 +39,12 @@ df.drop_duplicates(subset="ID", keep="last", inplace=True)
 
 
 def get_task_name(div):
-    return div.find("span", class_="ql-subhead-1 l-mts").text.strip()
+    return div.find("span", class_="ql-title-medium l-mts").text.strip()
 
 
 def get_task_date(div):
     date_time_str = div.find(
-        "span", class_="ql-body-2 l-mbs").text.strip().replace("Earned ", "").replace(" EDT", "").replace(" EST", "")
+        "span", class_="ql-body-medium l-mbs").text.strip().replace("Earned ", "").replace(" EDT", "").replace(" EST", "")
     try:
         return datetime.strptime(date_time_str, '%b  %d, %Y')
     except Exception as ex:
