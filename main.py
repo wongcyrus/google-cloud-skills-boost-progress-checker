@@ -18,7 +18,7 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Essential Google Cloud Infrastructure: Foundation",
                   "Essential Google Cloud Infrastructure: Core Services",
                   "Optimize Costs for Google Kubernetes Engine",
-                  "Automating Infrastructure on Google Cloud with Terraform"]
+                  "Build Infrastructure with Terraform on Google Cloud"]
 
 sheet_id = os.environ.get("SHEET_ID")
 sheet_name = urllib.parse.quote("Form Responses 1")
