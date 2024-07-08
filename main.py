@@ -18,7 +18,7 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Essential Google Cloud Infrastructure: Foundation",
                   "Essential Google Cloud Infrastructure: Core Services",
                   "Optimize Costs for Google Kubernetes Engine",
-                  "Automating Infrastructure on Google Cloud with Terraform",]
+                  "Automating Infrastructure on Google Cloud with Terraform"]
 
 sheet_id = os.environ.get("SHEET_ID")
 sheet_name = urllib.parse.quote("Form Responses 1")
@@ -27,7 +27,9 @@ df = pd.read_csv(url)
 
 # rename columns Student ID to ID and Public Profile URL to Public Profile
 df.rename(columns={"Student ID": "ID",
-          "Public Profile URL": "Public Profile"}, inplace=True)
+          "Public Profile Url": "Public Profile"}, inplace=True)
+
+# print(df.columns)
 # remove other columns
 df = df[["ID", "Public Profile"]]
 
@@ -71,6 +73,9 @@ def get_tasks(x):
     x["Public Profile"] = url
     for k, v in tasks:
         x[k] = v
+    for task in required_tasks:
+        if task not in x:
+            x[task] = pd.NaT
     return x
 
 
@@ -123,6 +128,7 @@ def count_X(row):
     return no_x
 
 
+report_require_X = report_require_X.copy()
 report_require_X.loc[:, 'Finished'] = report_require_X.apply(
     count_X, axis=1)
 report_require_X.loc[:, 'Complete All'] = report_require_X.apply(
@@ -140,7 +146,7 @@ report_required.to_excel(writer, sheet_name='Required Date')
 report_all.to_excel(writer, sheet_name='All Date')
 
 # Close the Pandas Excel writer and output the Excel file.
-writer.save()
+writer.close()
 
 report_require_X.to_html("table.html")
 # Read report.html file and save to a variable
