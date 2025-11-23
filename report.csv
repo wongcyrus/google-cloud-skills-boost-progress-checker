@@ -16,12 +16,12 @@
 66,240016495,No,2,https://www.cloudskillsboost.google/public_profiles/a44633e8-e557-4732-9311-5907aceeeeea,X,X,,,,
 18,240019203,No,2,https://www.cloudskillsboost.google/public_profiles/cdaf033b-cfb8-437f-92f8-f79ced2eeda3,X,X,,,,
 69,240021898,Yes,6,https://www.cloudskillsboost.google/public_profiles/b32198f2-ef6c-473b-a11c-e50e61af8c6f,X,X,X,X,X,X
-21,240026488,No,4,https://www.cloudskillsboost.google/public_profiles/178cc6d1-0368-48b2-8d22-7674fadac702,X,X,X,X,,
+21,240026488,Yes,6,https://www.cloudskillsboost.google/public_profiles/178cc6d1-0368-48b2-8d22-7674fadac702,X,X,X,X,X,X
 67,240032089,Yes,6,https://www.cloudskillsboost.google/public_profiles/6b7fed23-ee3c-4b40-a1cb-c655788a84b2,X,X,X,X,X,X
 6,240032329,No,1,https://www.cloudskillsboost.google/public_profiles/d6412f8d-33aa-4d25-ad9c-c940ae70b646,X,,,,,
-23,240036433,No,2,https://www.cloudskillsboost.google/public_profiles/b6677e07-b039-4493-9419-cdf060d90498,X,X,,,,
+23,240036433,No,3,https://www.cloudskillsboost.google/public_profiles/b6677e07-b039-4493-9419-cdf060d90498,X,X,X,,,
 16,240036629,No,0,https://www.cloudskillsboost.google/public_profiles/6cb01925-4161-4297-9cbd-ea5c0e6c9d67,,,,,,
-29,240039644,No,1,https://www.cloudskillsboost.google/public_profiles/9db62c33-c9c9-4fed-ac58-428ba60c9ee7,X,,,,,
+29,240039644,No,2,https://www.cloudskillsboost.google/public_profiles/9db62c33-c9c9-4fed-ac58-428ba60c9ee7,X,X,,,,
 79,240044875,No,1,https://www.cloudskillsboost.google/public_profiles/0efae837-cef2-41f4-9760-f01a1168edff,X,,,,,
 8,240051504,Yes,6,https://www.cloudskillsboost.google/public_profiles/5c5ccee4-2b1b-40dc-9d98-949e147e47e7,X,X,X,X,X,X
 50,240052316,No,0,https://www.cloudskillsboost.google/public_profiles/21e1cbbb-5ef6-4530-9520-6f7bdfc76699,,,,,,
@@ -45,7 +45,7 @@
 28,240095482,No,1,https://www.cloudskillsboost.google/public_profiles/c41be201-e3b1-4149-a255-56a4924eaca3,X,,,,,
 62,240095666,Yes,6,https://www.cloudskillsboost.google/public_profiles/59fe40ff-c440-424d-bc62-ed93b6c76366,X,X,X,X,X,X
 39,240095678,Yes,6,https://www.cloudskillsboost.google/public_profiles/39e8411d-a675-4818-8f8b-a22f70294ff2,X,X,X,X,X,X
-81,240096780,No,1,https://www.cloudskillsboost.google/public_profiles/3dfbb53a-91a0-42f8-9fa5-3903d465865f,X,,,,,
+81,240096780,No,3,https://www.cloudskillsboost.google/public_profiles/3dfbb53a-91a0-42f8-9fa5-3903d465865f,X,X,X,,,
 14,240106071,Yes,6,https://www.cloudskillsboost.google/public_profiles/8a1623d0-8fc4-423d-a684-6134d0a27549,X,X,X,X,X,X
 10,240106151,No,3,https://www.cloudskillsboost.google/public_profiles/4c430756-4cbb-4046-99a5-081d1fac9f2d,X,X,X,,,
 90,240106857,Yes,6,https://www.cloudskillsboost.google/public_profiles/c82b7f63-d26f-4446-8090-cf0c3fd995f1,X,X,X,X,X,X
@@ -67,7 +67,7 @@
 46,240167285,Yes,6,https://www.cloudskillsboost.google/public_profiles/c127c44c-0138-4f98-84cc-1bcdc64ede22,X,X,X,X,X,X
 13,240178091,Yes,6,https://www.cloudskillsboost.google/public_profiles/9dce4246-b7c2-4111-9319-1283615361b5,X,X,X,X,X,X
 61,240187493,No,4,https://www.cloudskillsboost.google/public_profiles/4a7bb2f0-7ac9-4413-b429-9aaa796e64ff,X,X,X,,,X
-27,240195087,No,0,https://www.cloudskillsboost.google/public_profiles/aac9086b-f84e-4a9f-9e2a-3ae641ac6925,,,,,,
+27,240195087,No,3,https://www.cloudskillsboost.google/public_profiles/aac9086b-f84e-4a9f-9e2a-3ae641ac6925,,,,X,X,X
 33,240205964,Yes,6,https://www.cloudskillsboost.google/public_profiles/1064c2b2-8d8f-4894-aa28-ff7deb978ab2,X,X,X,X,X,X
 73,240207275,No,0,https://www.cloudskillsboost.google/public_profiles/ecdadd5c-b95f-462d-bef1-35ec18fe5679,,,,,,
 65,240207539,Yes,6,https://www.cloudskillsboost.google/public_profiles/a2468b6c-95f8-4f80-b8b4-5596f0e35c72,X,X,X,X,X,X
