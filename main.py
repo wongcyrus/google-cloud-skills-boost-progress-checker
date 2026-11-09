@@ -2,7 +2,6 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-import pandas as pd
 import urllib.parse
 import os
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -20,14 +19,17 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Optimize Costs for Google Kubernetes Engine",
                   "Build Infrastructure with Terraform on Google Cloud"]
 
-sheet_id = os.environ.get("SHEET_ID")
+DEFAULT_SHEET_ID = "1SXn1Hlb8j0kH46F9ieE2FOzz-H4UhgoBonlPbZMBnLg"
+sheet_id = os.environ.get("SHEET_ID") or DEFAULT_SHEET_ID
+if "spreadsheets/d/" in sheet_id:
+    sheet_id = sheet_id.split("spreadsheets/d/")[1].split("/")[0]
 sheet_name = urllib.parse.quote("Form Responses 1")
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 df = pd.read_csv(url)
 
 # rename columns Student ID to ID and Public Profile URL to Public Profile
-df.rename(columns={"Student ID": "ID",
-          "Public Profile Url": "Public Profile"}, inplace=True)
+df = df.rename(columns={"Student ID": "ID",
+               "Public Profile Url": "Public Profile"})
 
 # print(df.columns)
 # remove other columns
@@ -37,7 +39,7 @@ df = df[["ID", "Public Profile"]]
 duplicated_profile = df[df.duplicated(subset="Public Profile", keep=False)]
 
 # if there is duplicate ID, keep the last one
-df.drop_duplicates(subset="ID", keep="last", inplace=True)
+df = df.drop_duplicates(subset="ID", keep="last")
 
 
 def get_task_name(div):
@@ -48,7 +50,7 @@ def get_task_date(div):
     date_time_str = div.find(
         "span", class_="ql-body-medium l-mbs").text.strip().replace("Earned ", "").replace(" EDT", "").replace(" EST", "")
     try:
-        return datetime.strptime(date_time_str, '%b  %d, %Y')
+        return datetime.strptime(date_time_str, '%b %d, %Y')
     except Exception as ex:
         print(date_time_str)
         return pd.NaT
@@ -64,7 +66,8 @@ def convert(tup):
 def get_tasks(x):
     id = x['ID']
     url = x['Public Profile']
-    page = requests.get(x['Public Profile'])
+    clean_url = str(url).strip().split("?")[0]
+    page = requests.get(clean_url, params={"locale": "en"})
     soup = BeautifulSoup(page.content, "html.parser")
     profile_badges = soup.find_all("div", class_="profile-badge")
     tasks = list(
@@ -93,14 +96,14 @@ def convert_to_x(row):
     r = []
     for index, value in row.items():
         if index not in left_cols:
-            r.append("" if value is pd.NaT else "X")
+            r.append("" if pd.isna(value) else "X")
         else:
             r.append(value)
     return pd.Series(r, index=row.index)
 
 
 result = df.apply(get_tasks, axis=1)
-result.sort_values(by=['ID'], inplace=True)
+result = result.sort_values(by=['ID'])
 report_all, report_required = generate_report(result)
 
 result = result.apply(convert_to_x, axis=1)
@@ -150,7 +153,8 @@ writer.close()
 
 report_require_X.to_html("table.html")
 # Read report.html file and save to a variable
-table = open("table.html").read()
+with open("table.html", encoding="utf-8") as f:
+    table = f.read()
 template = env.get_template("report.html")
 
 # Get Hong kong time
@@ -160,7 +164,7 @@ datetime_HK = datetime.now(tz)
 report_html = template.render(
     table=table, now=datetime_HK.strftime("%d/%m/%Y %H:%M:%S"), time_zone="Hong Kong")
 # save report.html
-with open("report.html", "w") as f:
+with open("report.html", "w", encoding="utf-8") as f:
     f.write(report_html)
 # remove table.html
 os.remove("table.html")

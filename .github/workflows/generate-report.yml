@@ -2,8 +2,8 @@ name: generate-report
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 12 * * *' # runs at 12:00 UTC everyday
+  schedule:
+    - cron: '0 12 * * *' # runs at 12:00 UTC everyday
 
 jobs:
   build:
@@ -11,13 +11,13 @@ jobs:
     timeout-minutes: 20
     steps:
 
-      - name: checkout repo contentgit 
-        uses: actions/checkout@v3 # checkout the repository content to github runner
+      - name: checkout repo content
+        uses: actions/checkout@v4 # checkout the repository content to github runner
 
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12.1' # install the python version needed
+          python-version: '3.14' # install the python version needed
           
       - name: install python packages
         run: |
@@ -40,7 +40,7 @@ jobs:
           git commit -m "update data" -a
           
       - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main  
