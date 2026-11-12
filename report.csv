@@ -1,6 +1,6 @@
 ,ID,Complete All,Finished,Public Profile,Getting Started with Google Kubernetes Engine,Google Cloud Fundamentals: Core Infrastructure,Essential Google Cloud Infrastructure: Foundation,Essential Google Cloud Infrastructure: Core Services,Optimize Costs for Google Kubernetes Engine,Build Infrastructure with Terraform on Google Cloud
 48,240076166,No,0,https://www.skills.google/public_profiles/4d02346c-e9d3-4d57-9f61-f4bfa3ab137a,,,,,,
-0,250002058,No,0,https://www.skills.google/public_profiles/c75bb805-cdaa-41dc-b87f-4cb7b611633b,,,,,,
+0,250002058,No,1,https://www.skills.google/public_profiles/c75bb805-cdaa-41dc-b87f-4cb7b611633b,X,,,,,
 17,250003922,Yes,6,https://www.skills.google/public_profiles/782512c7-97c3-4b27-9b28-b3a009f08dfd,X,X,X,X,X,X
 40,250016155,Yes,6,https://www.skills.google/public_profiles/cd662c25-77d3-45ec-8acd-dff2ef85a491,X,X,X,X,X,X
 8,250016978,Yes,6,https://www.skills.google/public_profiles/58d43af8-841a-4399-a812-e90ec9681975,X,X,X,X,X,X
@@ -10,13 +10,13 @@
 33,250030740,No,0,https://www.skills.google/public_profiles/483df392-3f96-4df1-9602-40d566437d09?locale=ar,,,,,,
 44,250031367,No,0,https://www.skills.google/public_profiles/b9acf5c3-0023-48b1-91c2-837bbd965e84,,,,,,
 18,250034726,No,0,https://www.skills.google/public_profiles/b27901e1-517f-44c4-ad09-eb9041685510,,,,,,
-6,250035133,No,0,https://www.skills.google/public_profiles/fa94798b-7734-4748-848b-b18e000e1b78,,,,,,
-26,250044572,No,1,https://www.skills.google/public_profiles/45ec7b85-080a-48d1-a8a5-045eb422ac62,,X,,,,
+6,250035133,No,1,https://www.skills.google/public_profiles/fa94798b-7734-4748-848b-b18e000e1b78,X,,,,,
+26,250044572,No,2,https://www.skills.google/public_profiles/45ec7b85-080a-48d1-a8a5-045eb422ac62,,X,X,,,
 12,250044688,No,3,https://www.skills.google/public_profiles/7c1d0af5-9f47-411f-9264-5073042b23e3,X,,,,X,X
 7,250044707,No,1,https://www.skills.google/public_profiles/6393c864-38e9-45c7-a146-50d53e2bf1ed,,,,,,X
 31,250047494,Yes,6,https://www.skills.google/public_profiles/e9fe02ed-f93b-4def-8ecd-905087fe193c,X,X,X,X,X,X
 27,250057659,No,0,https://www.skills.google/public_profiles/1c526f8a-7bdf-4645-b8a8-64e58019926d?locale=es,,,,,,
-45,250093818,No,3,https://www.skills.google/public_profiles/95a571d6-9641-49f6-b654-532566b936af,X,X,X,,,
+45,250093818,No,4,https://www.skills.google/public_profiles/95a571d6-9641-49f6-b654-532566b936af,X,X,X,X,,
 21,250103226,No,4,https://www.skills.google/public_profiles/06c2840d-2158-4d34-9207-f8de202233e3,X,X,X,X,,
 24,250105348,No,0,https://www.skills.google/public_profiles/41f9de16-2d46-4d61-93c9-6663b468bb54,,,,,,
 32,250107201,Yes,6,https://www.skills.google/public_profiles/2f27e963-139f-429e-b36b-031cfca9f61b,X,X,X,X,X,X
@@ -25,7 +25,7 @@
 1,250114972,Yes,6,https://www.skills.google/public_profiles/57d344d8-6864-4d96-a1a8-1c843eaf5cdd,X,X,X,X,X,X
 35,250131330,No,3,https://www.skills.google/public_profiles/b20a6578-d518-4623-87e7-c30f9fcb51f5,X,X,,,,X
 34,250147211,Yes,6,https://www.skills.google/public_profiles/dc73fc49-7b6c-4330-a27b-75c98450b39f,X,X,X,X,X,X
-13,250214264,No,2,https://www.skills.google/public_profiles/4d9da65f-cee8-4d70-a623-9ce13535fbf2?locale=zh_TW,X,X,,,,
+13,250214264,No,3,https://www.skills.google/public_profiles/4d9da65f-cee8-4d70-a623-9ce13535fbf2?locale=zh_TW,X,X,X,,,
 36,250216860,No,0,https://www.skills.google/public_profiles/4575b437-e057-4d8f-b748-f6ce4e77251c,,,,,,
 46,250231955,No,0,https://www.skills.google/public_profiles/09a4df57-21f1-4703-afb7-3156c8014363?locale=zh_TW,,,,,,
 23,250235862,No,0,https://www.skills.google/public_profiles/df57d615-dd55-4f80-94b8-7557bd79c1e9,,,,,,
