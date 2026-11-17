@@ -19,9 +19,8 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Optimize Costs for Google Kubernetes Engine",
                   "Build Infrastructure with Terraform on Google Cloud"]
 
-DEFAULT_SHEET_ID = "1Xj2-DP13OZ7scKcSfHIKRTQzzjPZvMdAqiaJlGuUhK4"
-sheet_id = os.environ.get("SHEET_ID") or DEFAULT_SHEET_ID
-if "spreadsheets/d/" in sheet_id:
+sheet_id = os.environ.get("SHEET_ID")
+if sheet_id and "spreadsheets/d/" in sheet_id:
     sheet_id = sheet_id.split("spreadsheets/d/")[1].split("/")[0]
 sheet_name = urllib.parse.quote("Form Responses 1")
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
