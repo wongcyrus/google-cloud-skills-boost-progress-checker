@@ -19,7 +19,7 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Optimize Costs for Google Kubernetes Engine",
                   "Build Infrastructure with Terraform on Google Cloud"]
 
-DEFAULT_SHEET_ID = "1SXn1Hlb8j0kH46F9ieE2FOzz-H4UhgoBonlPbZMBnLg"
+DEFAULT_SHEET_ID = "1Xj2-DP13OZ7scKcSfHIKRTQzzjPZvMdAqiaJlGuUhK4"
 sheet_id = os.environ.get("SHEET_ID") or DEFAULT_SHEET_ID
 if "spreadsheets/d/" in sheet_id:
     sheet_id = sheet_id.split("spreadsheets/d/")[1].split("/")[0]
@@ -73,7 +73,6 @@ def get_tasks(x):
     tasks = list(
         map(lambda b: (get_task_name(b), get_task_date(b)), profile_badges))
     x["ID"] = id
-    x["Public Profile"] = url
     for k, v in tasks:
         x[k] = v
     for task in required_tasks:
@@ -82,7 +81,7 @@ def get_tasks(x):
     return x
 
 
-left_cols = ['ID', 'Public Profile']
+left_cols = ['ID']
 
 
 def generate_report(result):
@@ -103,6 +102,7 @@ def convert_to_x(row):
 
 
 result = df.apply(get_tasks, axis=1)
+result = result.drop(columns=["Public Profile"], errors="ignore")
 result = result.sort_values(by=['ID'])
 report_all, report_required = generate_report(result)
 
@@ -112,9 +112,9 @@ report_all_X, report_require_X = generate_report(result)
 # Create a Pandas Excel writer using XlsxWriter as the engine.
 writer = pd.ExcelWriter('report.xlsx', engine='xlsxwriter')
 
-non_mark_cols = ['ID', 'Public Profile', 'Finished', 'Complete All']
+non_mark_cols = ['ID', 'Finished', 'Complete All']
 
-# in report_require_X dataframe, except ID and Public Profile, if all other columns are X, then mark to a new completed column
+# in report_require_X dataframe, except ID, if all other columns are X, then mark to a new completed column
 def get_completed(row):
     for index, value in row.items():
         if index not in non_mark_cols:
