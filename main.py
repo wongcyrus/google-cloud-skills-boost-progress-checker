@@ -19,6 +19,14 @@ required_tasks = ["Getting Started with Google Kubernetes Engine",
                   "Optimize Costs for Google Kubernetes Engine",
                   "Build Infrastructure with Terraform on Google Cloud"]
 
+if os.path.exists(".env"):
+    with open(".env", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
 sheet_id = os.environ.get("SHEET_ID")
 if sheet_id and "spreadsheets/d/" in sheet_id:
     sheet_id = sheet_id.split("spreadsheets/d/")[1].split("/")[0]
